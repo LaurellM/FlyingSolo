@@ -14,9 +14,13 @@
 </head>
 <body>
     <div class="topnav">
+        {% if request.user.is_authenticated %}
+        <div>{{ user.username }}</div>
         <a class="active" href="{% url 'home' %}">Home</a>
+        <a class="center" href="/accounts/logout">Log Out</a>
+        {% else %}
         <a class="center" href="/accounts/login">Login</a>
-
+        {% endif %}
         
       </div>
     {% block content %}
