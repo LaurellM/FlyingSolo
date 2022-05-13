@@ -3,18 +3,20 @@
 {% block content %}
 {% load static %}
 
-        <h1>SUGAHFREE</h1>
-        <p style="color:black;">"As a diabetic, I want to be able to keep track of my insulin & carbs intake so that I can live a longer healthier life."</p>
-        <div><img src= "heather-ford-Fq54FqucgCE-unsplash.jpg" alt="Donuts"><div>
+        <h1>Sugahfree</h1>
+        
+            <img src="{% static 'images/donuts.jpg' %}" class="center" alt="Donuts">
+        
+        <p style="color:#e41d8b;">"As a diabetic, I want to be able to keep track of my insulin & carbs intake so that I can live a longer healthier life."</p>
         <div>
-            <h3>ADD NEW ENTRY</h3>
+            <h3>Add a New Entry</h3>
             <form class="ba bw2 b--blue" data-user= {{ user.id }} id='input-form' method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="f6 link dim br-pill ph3 pv2 mb2 dib white bg-hot-pink" type="submit">Add Information</button>
+                <button type="submit">Add Info</button>
             </form>
             </div>
-            <h2>ENTRY RECORDS</h2>
+            <h2>Entry Logs</h2>
             <div id='results'></div>
     </body>
 

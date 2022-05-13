@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'scripts/main.js' %}" defer></script>
     <title>Sugahfree</title>
@@ -14,7 +15,7 @@
 <body>
     <div class="topnav">
         <a class="active" href="{% url 'home' %}">Home</a>
-        <a href="/accounts/login">Login</a>
+        <a class="center" href="/accounts/login">Login</a>
 
         
       </div>

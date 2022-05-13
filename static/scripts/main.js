@@ -68,16 +68,21 @@ InputForm.addEventListener('submit', function (event){
     })
 })
 
-function updateInput(element) {
-    const inputId = element.parentElement.id
-    const inputText = document.querySelector('.edit-text')
-    fetch(`http://localhost:3000/inputs/${inputId}`, {
+function updateInput(inputId) {
+console.log('updateinput', inputId)
+
+    fetch(`api/inputs/${inputId}/`, {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'X-Request-With': 'XMLHttpRequest',
+        'X-CSRFToken': csrftoken,
+      },
       body: JSON.stringify({
-        item: inputText.value,
-        updated_at: moment().format(),
+        taken: true,
       }),
+
     })
       .then(function (res) {
         return res.json()
@@ -85,7 +90,7 @@ function updateInput(element) {
       .then(function (data) {
         console.log(data)
         // update the item in the DOM
-        renderInputText(element.parentElement, data)
+      
       })
   }
 
