@@ -11,10 +11,10 @@
         
      
         {% if request.user.is_authenticated %}
-        <div>{{ user.username }}</div>
+        
             <div>
                 <h3>Add a New Entry</h3>
-                <form class="ba bw2 b--blue" data-user= {{ user.id }} id='input-form' method="post">
+                <form data-user= {{ user.id }} id='input-form' method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button type="submit">Add Info</button>
@@ -25,13 +25,13 @@
         
         {% endif %}
 
-            <h2>Entry Logs</h2>
+        
             <div id='results'></div>
     </body>
 
-    <div id="container">
+    <!-- <div id="container">
         <!-- <p id="edit"><b> Click "Edit" button to edit content. </b></p> -->
-        <button type="submit" id="edit-button">EDIT</button>
-      </div>
+        <!-- <button type="submit" id="edit-button">EDIT</button>
+      </div> -->
 </html>
 {% endblock %}
