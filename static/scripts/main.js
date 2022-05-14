@@ -68,31 +68,31 @@ InputForm.addEventListener('submit', function (event){
     })
 })
 
-function updateInput(inputId) {
-console.log('updateinput', inputId)
+// function updateInput(inputId) {
+// console.log('updateinput', inputId)
 
-    fetch(`api/inputs/${inputId}/`, {
-      method: 'PATCH',
-      headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-Request-With': 'XMLHttpRequest',
-        'X-CSRFToken': csrftoken,
-      },
-      body: JSON.stringify({
-        taken: true,
-      }),
+//     fetch(`api/inputs/${inputId}/`, {
+//       method: 'PATCH',
+//       headers: { 
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json',
+//         'X-Request-With': 'XMLHttpRequest',
+//         'X-CSRFToken': csrftoken,
+//       },
+//       body: JSON.stringify({
+//         taken: true,
+//       }),
 
-    })
-      .then(function (res) {
-        return res.json()
-      })
-      .then(function (data) {
-        console.log(data)
+//     })
+//       .then(function (res) {
+//         return res.json()
+//       })
+//       .then(function (data) {
+//         console.log(data)
         // update the item in the DOM
       
-      })
-  }
+  //     })
+  // }
 
 let inputs = []
 
@@ -100,13 +100,13 @@ let resultsDiv = document.querySelector('#results')
 console.log(resultsDiv)
 
 function buildResults (resultsArray){
-    console.log(resultsArray)
+    console.log('resultsArray')
     for (let input of resultsArray){
       let newDiv = document.createElement('div')
       let food = document.createElement('p')
       food.innerText= `this is food intake ${input.food_intake}`
       newDiv.appendChild(food)
-      newDiv.innerText = `INSULIN: ${input.insulin_in_units} CARBS: ${input.carbs_in_grams} FOOD: ${input.food_intake}`
+      newDiv.innerText = `${input.id}: INSULIN: ${input.insulin_in_units} CARBS: ${input.carbs_in_grams} FOOD: ${input.food_intake}`
     console.log(input.insulin_in_units, input.carbs_in_grams, input.food_intake)
       resultsDiv.appendChild(newDiv)
     }
@@ -115,14 +115,10 @@ function buildResults (resultsArray){
 
 const paragraph = document.getElementById("edit");
 const edit_button = document.getElementById("edit-button");
-const end_button = document.getElementById("end-editing");
+
 
 edit_button.addEventListener("click", function() {
   paragraph.contentEditable = true;
   paragraph.style.backgroundColor = "#dddbdb";
 } );
 
-end_button.addEventListener("click", function() {
-  paragraph.contentEditable = false;
-  paragraph.style.backgroundColor = "#ffe44d";
-} )

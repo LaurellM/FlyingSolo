@@ -3,6 +3,7 @@ from django.db import models
 from sugahfree.models import User
 
 class Input(models.Model):
+    
     insulin_in_units = models.IntegerField()
     carbs_in_grams = models.IntegerField()
     food_intake = models.TextField(blank=False)

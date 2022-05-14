@@ -12,6 +12,19 @@ def index(request):
     form = InputForm()
     return render(request, 'sugahfree/home.html', {'form': form, 'user': user})
 
+def edit(request, pk):
+    input = get_object_or_404(Input, pk=pk)
+    if request.method == "POST":
+        form = InputForm(request.POST, instance=input)
+        if form.is_valid():
+            input = form.save(commit=False)
+            input.user = request.user
+            input.save()
+            return render(request, )
+
+
+    
+
 # def ajax_add_input(request):
 #     data = {}
 #     if request.method == "POST":
