@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="pa4">
+    <div class="overflow-auto">
+      <table class="f6 w-100 mw8 center" cellspacing="0">
+        <thead>
+          <tr>
+            
+            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Insulin</th>
+            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Carbs</th>
+            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Food Intake</th>
+            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="lh-copy">
+            {% for input in inputs %}
+          <tr>
+            
+            <td class="pv3 pr3 bb b--black-20">{{input.insulin_in_units}}</td>
+            <td class="pv3 pr3 bb b--black-20">{{input.carbs_in_grams}}</td>
+            <td class="pv3 pr3 bb b--black-20">{{input.food_intake}}</td>
+            <td class="pv3 pr3 bb b--black-20"><a href="{% url 'edit' pk=input.id %}">Edit</a></td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  {% endblock %}

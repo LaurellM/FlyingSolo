@@ -20,7 +20,17 @@ def edit(request, pk):
             input = form.save(commit=False)
             input.user = request.user
             input.save()
-            return render(request, )
+            return redirect("main_list")
+    else:
+        form = InputForm(instance = input)
+    return render(request, 'sugahfree/edit.html', {'form': form, 'user': request.user})        
+
+def redirect_to_list(request):
+    return redirect("main_list")
+
+def main_list(request):
+    inputs = Input.objects.filter(user=request.user).order_by('created')
+    return render(request, 'sugahfree/main_list.html', {'inputs': inputs})
 
 
     

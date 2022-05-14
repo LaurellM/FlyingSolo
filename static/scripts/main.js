@@ -24,23 +24,23 @@ console.log(InputForm)
 let user_id = InputForm.dataset.user
 const inputURL = 'api/inputs/'
 
-fetch(inputURL, {
-    method: 'GET',
-    credentials: 'same-origin',
-    headers:{
-        'Accept': 'application/json',
-        'X-Request-With': 'XMLHttpRequest',
-        'X-CSRFToken': csrftoken,
-    },
-    // body: formData
-})
-.then(response => {
-    return response.json()
-})
-.then(data => {
-    console.log("inputs", data)
-    buildResults(data)
-})
+// fetch(inputURL, {
+//     method: 'GET',
+//     credentials: 'same-origin',
+//     headers:{
+//         'Accept': 'application/json',
+//         'X-Request-With': 'XMLHttpRequest',
+//         'X-CSRFToken': csrftoken,
+//     },
+//     // body: formData
+// })
+// .then(response => {
+//     return response.json()
+// })
+// .then(data => {
+//     console.log("inputs", data)
+//     buildResults(data)
+// })
 
 InputForm.addEventListener('submit', function (event){
     event.preventDefault()
@@ -59,13 +59,24 @@ InputForm.addEventListener('submit', function (event){
         },
         body: formData
     })
-    .then(response => {
-        return response.json()
-    })
-    .then(data => {
-        console.log(data)
-        window.location.reload();
-    })
+    
+
+    // In order to redirect
+    window.location.href="main_list";
+  //   fetch('redirect_to_main_list/', {
+  //     method: 'GET',
+  //     credentials: 'same-origin',
+  //     headers:{
+  //         'Accept': 'application/json',
+  //         'X-Request-With': 'XMLHttpRequest',
+  //         'X-CSRFToken': csrftoken,
+  //     },
+  // })
+
+    // .then(data => {
+        // console.log(data)
+        // window.location.reload();
+    // })
 })
 
 // function updateInput(inputId) {

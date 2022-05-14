@@ -18,6 +18,9 @@
         <div>{{ user.username }}</div>
         <a class="active" href="{% url 'home' %}">Home</a>
         <a class="center" href="/accounts/logout">Log Out</a>
+        <a class="center" href="{% url 'main_list' %}">Main List</a>
+
+
         {% else %}
         <a class="center" href="/accounts/login">Login</a>
         {% endif %}
