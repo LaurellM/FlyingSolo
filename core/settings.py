@@ -137,9 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'sugahfree.User' 
 
-ACCOUNT_ACTIVATION_DAYS =7
-
-SIMPLE_BACKEND_REDIRECRT_URL = 'core:home'
+LOGIN_REDIRECT_URL = 'home'
 
 REGISTRATION_AUTO_LOGIN = True
 

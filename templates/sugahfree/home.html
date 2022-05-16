@@ -1,6 +1,7 @@
 
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'home_base.html' %}
+
+{% block home_base_content %}
 {% load static %}
 
         <h1>Sugahfree</h1>
@@ -20,8 +21,6 @@
                     <button type="submit">Add Info</button>
                 </form>
                 </div>
-            {% else %}
-            <li><a href="/login">Log In</a></li>
         
         {% endif %}
 

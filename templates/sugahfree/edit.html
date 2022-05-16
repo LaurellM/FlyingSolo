@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'home_base.html' %}
 
-{% block content %}
-<div class='tc'>
+{% block home_base_content %}
+<div>
 <h1>Edit {{ selected_entry }}</h1>
-<form class='tl' action="" method="post">
+<form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Save</button>

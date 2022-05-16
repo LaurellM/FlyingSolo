@@ -13,21 +13,7 @@
     <title>Sugahfree</title>
 </head>
 <body>
-    <div class="topnav">
-        {% if request.user.is_authenticated %}
-        <div>{{ user.username }}</div>
-        
-        <nav class="pa3 pa4-ns">
-            <a class="link dark-blue b f6 f5-ns dib mr3" href="{% url 'home' %}">Home</a>
-            <a class="link dark-blue b f6 f5-ns dib mr3" href="/accounts/logout">Log Out</a>
-            <a class="link dark-blue b f6 f5-ns dib mr3" href="{% url 'main_list' %}">Entry Log</a>
-        </nav>
-
-        {% else %}
-        <a class="center" href="/accounts/login">Login</a>
-        {% endif %}
-        
-      </div>
+    
     {% block content %}
     {% endblock %}
 </body>
