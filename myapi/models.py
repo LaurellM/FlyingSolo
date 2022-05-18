@@ -11,6 +11,6 @@ class Input(models.Model):
     created = models.DateTimeField(auto_now_add= True)
 
 def __str__(self):
-    return self.insulin    
+    return self.insulin_in_units
 
 
