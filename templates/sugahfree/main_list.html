@@ -11,6 +11,7 @@
             <th class="fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Carbs</th>
             <th class="fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Food Intake</th>
             <th class="fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Actions</th>
+            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink"></th>
           </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.carbs_in_grams}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.food_intake}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white"><a href="{% url 'edit' pk=input.id %}">Edit</a></td>
+            <td class="pv3 pr3 bb b--black-20 bg-white"><a href="{% url 'delete' pk=input.id %}">Delete</a></td>
           </tr>
             {% endfor %}
         </tbody>

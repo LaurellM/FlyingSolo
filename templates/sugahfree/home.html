@@ -15,7 +15,7 @@
         
             <div>
                 <h3>Add a New Entry</h3>
-                <form data-user= {{ user.id }} id='input-form' method="post">
+                <form data-user={{ user.id }} id='input-form' method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button type="submit">Add Info</button>
@@ -24,8 +24,6 @@
         
         {% endif %}
 
-        
-            <div id='results'></div>
     </body>
 
     <!-- <div id="container">

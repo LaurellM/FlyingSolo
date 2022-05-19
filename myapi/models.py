@@ -9,6 +9,6 @@ class Input(models.Model):
     food_intake = models.TextField(blank=False)
     user = models.ForeignKey(User, related_name= 'inputs', on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add= True)
-    modified_at = models.DateTimeField(auto_now=True)
+    modified_at = models.DateTimeField(auto_now= True)
 
 
