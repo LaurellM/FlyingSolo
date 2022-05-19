@@ -24,24 +24,6 @@ console.log(InputForm)
 let user_id = InputForm.dataset.user
 const inputURL = 'api/inputs/'
 
-// fetch(inputURL, {
-//     method: 'GET',
-//     credentials: 'same-origin',
-//     headers:{
-//         'Accept': 'application/json',
-//         'X-Request-With': 'XMLHttpRequest',
-//         'X-CSRFToken': csrftoken,
-//     },
-//     // body: formData
-// })
-// .then(response => {
-//     return response.json()
-// })
-// .then(data => {
-//     console.log("inputs", data)
-//     buildResults(data)
-// })
-
 InputForm.addEventListener('submit', function (event){
     event.preventDefault()
     console.log(event.target)
@@ -60,50 +42,9 @@ InputForm.addEventListener('submit', function (event){
         body: formData
     })
     
-
-    // In order to redirect
     window.location.href="main_list";
-  //   fetch('redirect_to_main_list/', {
-  //     method: 'GET',
-  //     credentials: 'same-origin',
-  //     headers:{
-  //         'Accept': 'application/json',
-  //         'X-Request-With': 'XMLHttpRequest',
-  //         'X-CSRFToken': csrftoken,
-  //     },
-  // })
-
-    // .then(data => {
-        // console.log(data)
-        // window.location.reload();
-    // })
+  
 })
-
-// function updateInput(inputId) {
-// console.log('updateinput', inputId)
-
-//     fetch(`api/inputs/${inputId}/`, {
-//       method: 'PATCH',
-//       headers: { 
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json',
-//         'X-Request-With': 'XMLHttpRequest',
-//         'X-CSRFToken': csrftoken,
-//       },
-//       body: JSON.stringify({
-//         taken: true,
-//       }),
-
-//     })
-//       .then(function (res) {
-//         return res.json()
-//       })
-//       .then(function (data) {
-//         console.log(data)
-        // update the item in the DOM
-      
-  //     })
-  // }
 
 let inputs = []
 
@@ -120,8 +61,7 @@ function buildResults (resultsArray){
       newDiv.innerText = `${input.id}: INSULIN: ${input.insulin_in_units} CARBS: ${input.carbs_in_grams} FOOD: ${input.food_intake}`
     console.log(input.insulin_in_units, input.carbs_in_grams, input.food_intake)
       resultsDiv.appendChild(newDiv)
-    }
-  
+    }  
   }
 
 const paragraph = document.getElementById("edit");
