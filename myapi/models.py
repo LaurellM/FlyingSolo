@@ -7,10 +7,8 @@ class Input(models.Model):
     insulin_in_units = models.IntegerField()
     carbs_in_grams = models.IntegerField()
     food_intake = models.TextField(blank=False)
-    user = models.ForeignKey(User, related_name= 'inputs', on_delete= models.CASCADE)
+    user = models.ForeignKey(User, related_name= 'inputs', on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add= True)
-
-def __str__(self):
-    return self.insulin_in_units
+    modified_at = models.DateTimeField(auto_now=True)
 
 

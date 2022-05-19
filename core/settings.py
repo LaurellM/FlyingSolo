@@ -11,18 +11,22 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-from os import environ
-# import django_on_heroku
-# import environ
+
+import environ
 import os
 
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
 from pathlib import Path
-from site import USER_BASE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+DEBUG = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -31,7 +35,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-##oae(fi1^1k(wsya^a@&+r#^&br+$ry+v!bviztb4(ru%jz6h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
@@ -46,10 +50,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sugahfree',
-    'myapi.apps.MyapiConfig',
     'rest_framework',
-    
+    'myapi.apps.MyapiConfig',
+    'sugahfree',  
 ]
 
 MIDDLEWARE = [
@@ -87,10 +90,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': env.db(),
+
 }
 
 
