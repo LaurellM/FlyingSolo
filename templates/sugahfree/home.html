@@ -18,7 +18,7 @@
                 <form data-user={{ user.id }} id='input-form' method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit">Add Info</button>
+                    <button class="ma2" type="submit">Add Info</button>
                 </form>
                 </div>
         
@@ -26,9 +26,5 @@
 
     </body>
 
-    <!-- <div id="container">
-        <!-- <p id="edit"><b> Click "Edit" button to edit content. </b></p> -->
-        <!-- <button type="submit" id="edit-button">EDIT</button>
-      </div> -->
 </html>
 {% endblock %}

@@ -2,22 +2,23 @@
 
 {% block home_base_content %}
 {% load static %}
+
 <div class="pa4">
     <div class="overflow-auto">
-      <table class="f6 w-100 mw5 center" cellspacing="0">
+
+      <table class="f8 w-100 mw5 center" cellspacing="0">
         <thead>
           <tr>
-            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Insulin</th>
-            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Carbs</th>
-            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Food Intake</th>
-            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Edit</th>
-            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Delete</th>
+            <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Insulin</th>
+            <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Carbs</th>
+            <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Food Intake</th>
+            <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Edit</th>
+            <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Delete</th>
           </tr>
         </thead>
         <tbody>
             {% for input in inputs %}
-          <tr>
-            
+          <tr style="height: 100px">
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.insulin_in_units}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.carbs_in_grams}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.food_intake}}</td>
@@ -29,5 +30,6 @@
       </table>
     </div>
   </div>
+
   
   {% endblock %}
