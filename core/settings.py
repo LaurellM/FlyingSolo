@@ -15,8 +15,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import environ
 import os
 import django_on_heroku
-#django_on_heroku.settings(locals())
-#del DATABASES['default']['OPTIONS']['sslmode']
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -145,5 +143,8 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 REGISTRATION_AUTO_LOGIN = True
+
+django_on_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
 
 
