@@ -8,7 +8,5 @@ class InputViewSet(viewsets.ModelViewSet):
     serializer_class = InputSerializer
 
 
-# Create your views here.
-
     def get_queryset(self):
         return self.request.user.inputs.all().order_by('-created')

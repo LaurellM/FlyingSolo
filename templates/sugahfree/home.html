@@ -8,7 +8,7 @@
         
             <img src="{% static 'images/donuts.jpg' %}" class="center" alt="Donuts">
         
-        <p style="color:#e41d8b;">"As a diabetic, I want to be able to keep track of my insulin & carbs intake so that I can live a longer healthier life."</p>
+        <p class="userstory">"As a diabetic, I want to be able to keep track of my insulin & carbs intake so that I can live a longer healthier life."</p>
         
      
         {% if request.user.is_authenticated %}
@@ -26,9 +26,5 @@
 
     </body>
 
-    <!-- <div id="container">
-        <!-- <p id="edit"><b> Click "Edit" button to edit content. </b></p> -->
-        <!-- <button type="submit" id="edit-button">EDIT</button>
-      </div> -->
 </html>
 {% endblock %}
