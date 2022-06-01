@@ -6,7 +6,7 @@
 <div class="pa4">
     <div class="overflow-auto">
 
-      <table class="f8 w-100 mw5 center" cellspacing="0">
+      <table class="apptable" cellspacing="0">
         <thead>
           <tr>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Insulin</th>
@@ -18,7 +18,7 @@
         </thead>
         <tbody>
             {% for input in inputs %}
-          <tr style="height: 100px">
+          <tr class="tr-height">
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.insulin_in_units}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.carbs_in_grams}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.food_intake}}</td>

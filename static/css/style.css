@@ -9,13 +9,16 @@ h1 {
     color: rgb(25, 25, 238); 
 }
 
+.userstory {
+    color:#e41d8b;
+}
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 8%;
+  width:8%;
 }
-
 
 p {
     text-align: center;
@@ -25,11 +28,6 @@ p {
 div {
     text-align: center;
 }
-h3 {
-    font-family: Tahoma, sans-serif;
-    font-size: 25px;
-    color: rgb(25, 25, 238);
-}
 
 h2 {
     font-family: Tahoma, sans-serif;
@@ -38,72 +36,54 @@ h2 {
     color: rgb(25, 25, 238);
 }
 
-button {
-    font-style: bold;
+h3 {
     font-family: Tahoma, sans-serif;
-    
+    font-size: 25px;
+    color: rgb(25, 25, 238);
 }
   
 button {
+    font-style: bold;
+    font-family: Tahoma, sans-serif;
     width: 80px;
     padding: 5px;
-    margin: 0 3px;
+    margin-top: 0px;
+    margin-bottom: 20px;
     background-color: #e41d8b;
     outline: none;
     border: 1px solid #ffffff;
     box-shadow: 2px 2px 2px #3f3f3f;
   }
   
-  button:hover {
+button:hover {
     box-shadow: 2px 2px 3px ;
   }
   
-  button:active {
+button:active {
     box-shadow: 1px 1px 3px ;
   }
 
-  .dib {
-    display: inline-block;
+.apptable {
+    margin-left: auto;
+    margin-right: auto;  
+    font-size: 16px;
+    width: 40%
+ 
+  }
+
+.login-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.fw6 {
-    font-weight: 600;
+.nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.tracked {
-    letter-spacing: .1em;
-}
-
-.link {
-    text-decoration: none;
-    transition: color .15s ease-in;
-}
-
-.link:link, .link:visited {
-    transition: color .15s ease-in;
-}
-
-.link:hover {
-    transition: color .15s ease-in;
-}
-
-.link:active {
-    transition: color .15s ease-in;
-}
-
-.link:focus {
-    transition: color .15s ease-in;
-    outline: 1px dotted currentColor;
-}
-
-.w-100 {
-    width: 100%;
-}
-
-.fixed {
-    position: fixed;
-}
-
-.white {
-    color: #fff;
+.tr-height {
+    height: 100px;
 }

@@ -8,7 +8,7 @@
         
             <img src="{% static 'images/donuts.jpg' %}" class="center" alt="Donuts">
         
-        <p style="color:#e41d8b;">"As a diabetic, I want to be able to keep track of my insulin & carbs intake so that I can live a longer healthier life."</p>
+        <p class="userstory">"As a diabetic, I want to be able to keep track of my insulin & carbs intake so that I can live a longer healthier life."</p>
         
      
         {% if request.user.is_authenticated %}
@@ -18,7 +18,7 @@
                 <form data-user={{ user.id }} id='input-form' method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="ma2" type="submit">Add Info</button>
+                    <button type="submit">Add Info</button>
                 </form>
                 </div>
         

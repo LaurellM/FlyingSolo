@@ -3,7 +3,7 @@
 <div class="topnav">
     {% if request.user.is_authenticated %}
     
-    <nav style="display: flex; justify-content: space-between; align-items: center" class="pa3 pa4-ns">
+    <nav class="nav-center"  class="pa3 pa4-ns">
         <div class=" dark-blue b">Welcome, {{ user.username }}</div>
         <div>
             <a class="link dark-blue b f6 f5-ns dib mr3" href="{% url 'home' %}">Home</a>
@@ -16,7 +16,7 @@
     </nav>
 
     {% else %}
-    <div style="display: flex; justify-content: center; align-items: center">
+    <div class="login-center">
         <a class="dark-blue b" href="/accounts/login">Login</a>
     </div>
     {% endif %}
