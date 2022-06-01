@@ -87,3 +87,8 @@ button:active {
 .tr-height {
     height: 75px;
 }
+
+.regcenter {
+    display: grid;
+    place-items: center;
+}
