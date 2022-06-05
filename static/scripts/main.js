@@ -29,15 +29,13 @@ edit_button.style.display = 'none'
 const entry_content = document.getElementById("action-entry");
 
 const InputForm = document.querySelector('#input-form');
-console.log(InputForm);
 const user_id = InputForm.dataset.user;
 const inputURL = 'api/inputs/';
 
 InputForm.addEventListener('submit', function (event){
     event.preventDefault()
-    console.log(event.target)
 
-    formData = new FormData(InputForm);
+    let formData = new FormData(InputForm);
     formData.append('user', user_id);
 
 fetch(inputURL, {
