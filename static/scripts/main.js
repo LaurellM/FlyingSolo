@@ -90,6 +90,7 @@ function updateInput(inputId, content) {
 
         if (inputId) {
             updateInput(inputId, content);
+            alert('Submitted')
         } else {
             window.location.reload(true);
         }
