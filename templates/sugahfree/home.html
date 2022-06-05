@@ -14,14 +14,18 @@
         {% if request.user.is_authenticated %}
         
             <div>
-                <h3>Add a New Entry</h3>
+                <h3 id="action-entry">Add a New Entry</h3>
                 <form data-user={{ user.id }} id='input-form' method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button type="submit">Add Info</button>
                 </form>
                 </div>
-        
+                <div class="hidden" id="actions">
+                    <button class="hidden" type="submit" id="edit-button">Edit Current Entry</button>
+                    <button class="hidden" type="submit" id="add-new-entry-button">Add a New Entry</button>
+                </div>
+                
         {% endif %}
 
     </body>
