@@ -17,7 +17,6 @@ function getCookie(name) {
     return cookieValue;
 }
 
-
 const csrftoken = getCookie('csrftoken');
 
 const add_button = document.querySelector('button[type="submit"]');
@@ -58,7 +57,6 @@ fetch(inputURL, {
         add_new_entry_button.style.display = "inline";
         edit_button.style.display = "inline";
         entry_content.innerHTML = "Edit Entry";
-        alert('Entry Created')
     });
 });
 
@@ -90,7 +88,6 @@ function updateInput(inputId, content) {
 
         if (inputId) {
             updateInput(inputId, content);
-            alert('Submitted')
         } else {
             window.location.reload(true);
         }

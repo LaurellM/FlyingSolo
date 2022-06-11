@@ -9,6 +9,7 @@
       <table class="apptable" cellspacing="1">
         <thead>
           <tr>
+            <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Created</th>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Insulin</th>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Carbs</th>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Food Intake</th>
@@ -19,6 +20,7 @@
         <tbody>
             {% for input in inputs %}
           <tr class="tr-height">
+            <td class="pv3 pr3 bb b--black-20 bg-white">{{input.created}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.insulin_in_units}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.carbs_in_grams}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.food_intake}}</td>
