@@ -9,6 +9,7 @@
       <table class="apptable" cellspacing="1">
         <thead>
           <tr>
+            <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Entry ID</th>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Created</th>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Insulin</th>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Carbs</th>
@@ -19,12 +20,13 @@
         </thead>
         <tbody>
             {% for input in inputs %}
-          <tr class="tr-height">
+          <tr id='edit-row-{{input.id}}' class="tr-height">
+            <td id='edit-entry-id-{{input.id}}' class="pv3 pr3 bb b--black-20 bg-white">{{input.id}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.created}}</td>
-            <td class="pv3 pr3 bb b--black-20 bg-white">{{input.insulin_in_units}}</td>
-            <td class="pv3 pr3 bb b--black-20 bg-white">{{input.carbs_in_grams}}</td>
-            <td class="pv3 pr3 bb b--black-20 bg-white">{{input.food_intake}}</td>
-            <td class="pv3 pr3 bb b--black-20 bg-white"><a href="{% url 'edit' pk=input.id %}">Edit</a></td>
+            <td id='edit-insulin-{{input.id}}' class="pv3 pr3 bb b--black-20 bg-white">{{input.insulin_in_units}}</td>
+            <td id='edit-carbs-{{input.id}}' class="pv3 pr3 bb b--black-20 bg-white">{{input.carbs_in_grams}}</td>
+            <td id='edit-food-{{input.id}}' class="pv3 pr3 bb b--black-20 bg-white">{{input.food_intake}}</td>
+            <td class="pv3 pr3 bb b--black-20 bg-white"><a id="{{input.id}}" class='edit-anchor' href="{% url 'edit' pk=input.id %}">Edit</a></td>
             <td class="pv3 pr3 bb b--black-20 bg-white"><a href="{% url 'delete' pk=input.id %}">Delete</a></td>
           </tr>
             {% endfor %}

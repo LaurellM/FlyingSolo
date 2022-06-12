@@ -3,11 +3,11 @@
 {% block home_base_content %}
 <div>
 <h1>Edit {{ selected_entry }}</h1>
-<form action="" method="post">
+<form data-user={{ user.id }} id="edit-form">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
+    <button id="edit-button-save" type="submit">Save</button>
 </form>
 
 </div>
-{% endblock %}
+{% endblock %} 

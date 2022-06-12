@@ -3,7 +3,7 @@ from django.forms import forms
 from django.shortcuts import render 
 from django.shortcuts import render, redirect, get_object_or_404
 from myapi.models import Input
-from .forms import InputForm
+from .forms import InputForm, EditInputForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
@@ -28,17 +28,9 @@ def index(request):
 
 @login_required
 def edit(request, pk):
-    input = get_object_or_404(Input, pk=pk)
-    if request.method == "POST":
-        form = InputForm(request.POST, instance=input)
-        if form.is_valid():
-            input = form.save(commit=False)
-            input.user = request.user
-            input.save()
-            return redirect("main_list")
-    else:
-        form = InputForm(instance = input)
-    return render(request, 'sugahfree/edit.html', {'form': form, 'user': request.user})        
+    user = request.user
+    form = EditInputForm()
+    return render(request, 'sugahfree/edit.html', {'form': form, 'user': user})
 
 @login_required
 def redirect_to_list():
@@ -48,7 +40,6 @@ def redirect_to_list():
 def delete(request, pk):
     input = get_object_or_404(Input, pk=pk)
     input.delete()
-  
     return redirect("main_list")
 
 @login_required
