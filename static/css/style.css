@@ -92,3 +92,13 @@ button:active {
     display: grid;
     place-items: center;
 }
+
+.button-flex {
+    display: flex;
+    justify-content: center ;  
+    gap: 8px;
+}
+
+.button-item {
+    min-width: 80px;
+}

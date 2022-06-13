@@ -1,9 +1,41 @@
-{% extends 'home_base.html' %}
-
-{% block home_base_content %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Sugahfree</title>
+</head>
+<body>
 
-<div class="pa5">
+  <div class="topnav">
+    {% if request.user.is_authenticated %}
+    
+    <nav class="nav-center"  class="pa3 pa4-ns">
+        <div class=" dark-blue b">Welcome, {{ user.username }}</div>
+        <div>
+            <a class="link dark-blue b f6 f5-ns dib mr3" href="{% url 'home' %}">Home</a>
+            <a class="link dark-blue b f6 f5-ns dib mr3" href="{% url 'main_list' %}">Entry Log</a>
+            
+        </div>
+        <div>
+            <a class="link dark-blue b f6 f5-ns dib mr3" href="/accounts/logout">Log Out</a>
+        </div>
+    </nav>
+
+    {% else %}
+    <div class="login-center">
+        <a class="dark-blue b" href="/accounts/login">Login</a>
+    </div>
+    {% endif %}
+    
+  </div>
+    
+
+  <div class="pa5">
     <div class="overflow-auto">
 
       <table class="apptable" cellspacing="1">
@@ -13,7 +45,6 @@
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Insulin</th>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Carbs</th>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Food Intake</th>
-            <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Edit</th>
             <th class="pv2 pr2 pl2 fw6 bb b--black-20 tl pb3 pr3 bg-dark-pink">Delete</th>
           </tr>
         </thead>
@@ -24,7 +55,6 @@
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.insulin_in_units}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.carbs_in_grams}}</td>
             <td class="pv3 pr3 bb b--black-20 bg-white">{{input.food_intake}}</td>
-            <td class="pv3 pr3 bb b--black-20 bg-white"><a href="{% url 'edit' pk=input.id %}">Edit</a></td>
             <td class="pv3 pr3 bb b--black-20 bg-white"><a href="{% url 'delete' pk=input.id %}">Delete</a></td>
           </tr>
             {% endfor %}
@@ -34,4 +64,9 @@
   </div>
 
   
-  {% endblock %}
+
+</body>
+</html>
+
+
+

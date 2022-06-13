@@ -3,6 +3,9 @@
 
 {% block home_base_content %}
 {% load static %}
+     <!-- https://stackoverflow.com/questions/34719230/django-how-to-access-current-logged-in-users-id-in-javascript -->
+     <!-- https://docs.djangoproject.com/en/4.0/ref/templates/builtins/#json-script -->
+{{ request.user.id|json_script:"user_id" }}
 
         <h1>Sugahfree</h1>
         
@@ -10,21 +13,25 @@
         
         <p class="userstory">"As a diabetic, I want to be able to keep track of my insulin & carbs intake so that I can live a longer healthier life."</p>
         
-     
+
         {% if request.user.is_authenticated %}
+
+        
         
             <div>
                 <h3 id="action-entry">Add a New Entry</h3>
                 <form data-user={{ user.id }} id='input-form' method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit">Add Info</button>
+                    <div class="button-flex">
+                        <button class="button-item" id="add-info" type="submit">Add</button>
+                        <button class="button-item" id="update-info" type="button">Update</button>
+                    </div>
                 </form>
+      
                 </div>
-                <div class="hidden" id="actions">
-                    <button class="hidden" type="submit" id="edit-button">Submit Updated Info</button>
-                    <button class="hidden" type="submit" id="add-new-entry-button">Add a New Entry</button>
-                </div>
+                <div id='results' class='list p10'></div>
+          
                 
         {% endif %}
 

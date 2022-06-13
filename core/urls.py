@@ -24,7 +24,6 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('api/', include('myapi.urls')),
     path('main_list/', views.main_list, name='main_list'),
-    path('input/<int:pk>/edit/', views.edit, name='edit'),
     path('input/<int:pk>/delete/', views.delete, name='delete'),
     path('redirect_to_main_list/', views.redirect, name='redirect_to_main_list')
     
