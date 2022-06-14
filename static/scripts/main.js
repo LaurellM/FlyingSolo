@@ -104,11 +104,13 @@ if (user_id) {
     for (let input of resultsArray) {
       let newDiv = document.createElement("div");
       newDiv.setAttribute("id", input.id);
+      newDiv.classList.add('item')
       newDiv.innerText = `INSULIN: ${input.insulin_in_units} CARBS: ${input.carbs_in_grams} FOOD: ${input.food_intake}`;
       let anchor_edit = document.createElement("a");
       let link = document.createTextNode(" Edit");
       anchor_edit.appendChild(link);
       anchor_edit.setAttribute("id", input.id);
+      anchor_edit.classList.add("f6", "link", "dim", "br-pill", "pl30", "ph2", "pv1", "mb2", "dib", "black", "bg-dark-pink")
 
       anchor_edit.addEventListener("click", function () {
         const info = document.getElementById(anchor_edit.id);
