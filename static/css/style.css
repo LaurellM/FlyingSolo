@@ -102,3 +102,7 @@ button:active {
 .button-item {
     min-width: 80px;
 }
+
+.item > * {
+    margin: 0px 7px;
+}
